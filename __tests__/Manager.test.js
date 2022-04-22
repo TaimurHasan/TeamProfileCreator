@@ -1,7 +1,7 @@
 const Manager = require('../lib/Manager');
 
 describe('Manager', () => {
-    describe('manager object', ()=> {
+    describe('manager office number', ()=> {
         it('should return a managers office number', () => {
             const manager = new Manager('Taimur', 4, 'taimurhasan11@gmail', 10);
 
