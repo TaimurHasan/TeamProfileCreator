@@ -1,8 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
+const generatePage = require('./src/page-template');
 
 // question array for initial prompt on team manager
 const promptManager = () => {
@@ -189,9 +187,9 @@ const promptForTeam = (teamData) => {
 promptManager()
 .then(promptForTeam)
 .then((data) => {
-    console.log(data);
-    const { name, id, email, officeNumber } = data;
-    const manager = new Manager(name, id, email, officeNumber);
-    const role = manager.getRole();
-    console.log(manager, role);
-}) 
+    // console.log(data);
+    return generatePage(data);
+})
+.then(pageData => {
+    console.log(pageData);
+})
