@@ -16,15 +16,15 @@ const generateTeam = (employeeData) => {
         .map(({ name, email, id, github}) => {
             const engineer = new Engineer(name, email, id, github)
             return `
-            <div class="col-12 mb-2 bg-dark text-light p-3">
+            <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
                 <h3 class="portfolio-item-title text-light">${engineer.name}</h3>
                 <h5 class="portfolio-languages">
                     Role: ${engineer.getRole()}
                 </h5>
                 <p>
-                    Employee Id: ${engineer.id}
-                    Email: ${engineer.email}
-                    GitHub: <a href=https://github.com/${engineer.github}>${engineer.github}</a>
+                    Employee Id: ${engineer.id} <br/>
+                    Email: ${engineer.email} <br/>
+                    GitHub: <a href=https://github.com/${engineer.github} class="btn"><i class="fab fa-github mr-2"></i>${engineer.github}</a>
                 </p>
             </div>
             `
@@ -42,15 +42,15 @@ const generateTeam = (employeeData) => {
         .map(({ name, email, id, school}) => {
             const intern = new Intern(name, email, id, school)
             return `
-            <div class="col-12 mb-2 bg-dark text-light p-3">
+            <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
                 <h3 class="portfolio-item-title text-light">${intern.name}</h3>
                 <h5 class="portfolio-languages">
                     Role: ${intern.getRole()}
                 </h5>
                 <p>
-                    Employee Id: ${intern.id}
-                    Email: ${intern.email}
-                    School: ${intern.school}
+                    Employee Id: ${intern.id} <br/>
+                    Email: ${intern.email} <br/>
+                    School: ${intern.school} <br/>
                 </p>
             </div>
             `
@@ -65,19 +65,21 @@ const generateTeamSection = (data) => {
     const manager = new Manager(name, id, email, officeNumber);
 
     return `
-    <section>
-        <div class="col-12 mb-2 bg-dark text-light p-3">
-            <h3 class="portfolio-item-title text-light">${manager.name}</h3>
-            <h5 class="portfolio-languages">
-                Role: ${manager.getRole()}
-            </h5>
-            <p>
-            Employee Id: ${manager.id}
-            Email: ${manager.email}
-            Office Number: ${manager.officeNumber}
-            </p>
+    <section class="my-3" id="portfolio">
+        <div class="flex-row justify-space-between">
+            <div class="col-12 mb-2 bg-dark text-light p-3">
+                <h3 class="portfolio-item-title text-light">${manager.name}</h3>
+                <h5 class="portfolio-languages">
+                    Role: ${manager.getRole()}
+                </h5>
+                <p>
+                Employee Id: ${manager.id} <br/>
+                Email: ${manager.email} <br/>
+                Office Number: ${manager.officeNumber} <br/>
+                </p>
+            </div>
+            ${generateTeam(employeeData)}
         </div>
-        ${generateTeam(employeeData)}
     </section>
     `
 }

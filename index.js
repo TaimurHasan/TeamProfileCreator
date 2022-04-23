@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
 const generatePage = require('./src/page-template');
-
+const { writeFile, copyFile } = require('./utils/generate-site');
+ 
 // question array for initial prompt on team manager
 const promptManager = () => {
 return inquirer
@@ -191,5 +191,18 @@ promptManager()
     return generatePage(data);
 })
 .then(pageData => {
-    console.log(pageData);
+    return pageData;
+})
+.then(htmlData => {
+    return writeFile(htmlData);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse);
+    return copyFile();
+})
+.then(copyFileResponse => {
+    console.log(copyFileResponse);
+})
+.catch(err => {
+    console.log(err);
 })
