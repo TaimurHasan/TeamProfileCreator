@@ -23,7 +23,7 @@ const generateTeam = (employeeData) => {
                 </h5>
                 <p>
                     Employee Id: ${engineer.id} <br/>
-                    Email: <a href="mailto:${engineer.email}>${engineer.email}</a><br/>
+                    Email: <a href="mailto:${engineer.email}">${engineer.email}</a><br/>
                     GitHub: <a href=https://github.com/${engineer.github} class="btn"><i class="fab fa-github mr-2"></i>${engineer.github}</a>
                 </p>
             </div>
@@ -49,7 +49,7 @@ const generateTeam = (employeeData) => {
                 </h5>
                 <p>
                     Employee Id: ${intern.id} <br/>
-                    Email: <a href="mailto:${intern.email}>${intern.email}</a><br/>
+                    Email: <a href="mailto:${intern.email}">${intern.email}</a><br/>
                     School: ${intern.school} <br/>
                 </p>
             </div>
