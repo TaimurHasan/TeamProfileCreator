@@ -37,10 +37,12 @@ return inquirer
             name: 'email',
             message: "Enter the team manager's Email.",
             validate: (nameInput) => {
-                if(nameInput) {
+                // check is email is a valid email
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(nameInput);
+                if(nameInput && valid) {
                     return true;
                 } else {
-                    console.log("Please enter the team manager's Email!")
+                    console.log("Please enter a valid manager Email Address!")
                     return false;
                 }
             } 
@@ -50,10 +52,12 @@ return inquirer
             name: 'officeNumber',
             message: "Enter the team manager's office number.",
             validate: (nameInput) => {
-                if(nameInput) {
+                // check if office number is a number and then proceed
+                const isNumber = !isNaN(nameInput);
+                if(nameInput && isNumber) {
                     return true;
                 } else {
-                    console.log("Please enter the team manager's office number!")
+                    console.log("Please enter a valid office number!")
                     return false;
                 }
             } 
@@ -125,10 +129,11 @@ const promptForTeam = (teamData) => {
                     }
                 },
                 validate: (nameInput) => {
-                    if(nameInput) {
+                    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(nameInput);
+                    if(nameInput && valid) {
                         return true;
                     } else {
-                        console.log("Please enter the employee's Email!")
+                        console.log("Please enter a valid employee Email Address!")
                         return false;
                     }
                 } 

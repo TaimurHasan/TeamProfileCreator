@@ -74,7 +74,7 @@ const generateTeamSection = (data) => {
                 </h5>
                 <p>
                 Employee Id: ${manager.id} <br/>
-                Email: <a href="mailto:${manager.email}>${manager.email}</a><br/>
+                Email: <a href="mailto:${manager.email}">${manager.email}</a><br/>
                 Office Number: ${manager.officeNumber} <br/>
                 </p>
             </div>
@@ -87,8 +87,7 @@ const generateTeamSection = (data) => {
 const generatePage = (data) => {
     const { name } = data;
 
-    return `
-    <!DOCTYPE html>
+    return `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
