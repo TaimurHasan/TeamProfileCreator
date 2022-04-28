@@ -23,8 +23,9 @@ To install this application, please follow the steps listed below: 1. Download t
 <a name="usage"></a>
 
 ## Usage
-To use this application, please follow the steps listed below: 1. Answer the prompts listed on the screen, you will be required to provide an answer to all prompts. 2. If the application is successful, you will be presented with the message 'HTML File Created!' and 'Stylesheet Copied!'. 3. Navigate to the 'dist' sub-directory within the root directory and locate the index.html file created. 4. Use as needed
+To use this application, please follow the steps listed below: 1. Answer the prompts listed on the screen, you will be required to provide an answer to all prompts. 2. If the application is successful, you will be presented with the message 'HTML File Created!' and 'Stylesheet Copied!'. 3. Navigate to the 'dist' sub-directory within the root directory and locate the index.html file created. 4. Use as needed!
 
+For more detailed instructions, please watch the [walkthrough](https://drive.google.com/file/d/15AZdnEGZYQ5K82kN9YVn-1ZhG7vHX41N/view) video!
 
 <a name="license"></a>
 ## License
